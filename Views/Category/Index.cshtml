@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Restaurant.Models.Category>
+
+<h2>قائمة التصنيفات</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>الاسم</th>
+            <th>الوصف</th>
+            <th>إجراءات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>
+                    <a class="btn btn-danger" href="/Category/Delete/@item.Id">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="/Category/Create">إضافة تصنيف جديد</a>
